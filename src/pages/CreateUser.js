@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import CreateUserForm from "../components/CreateUserForm";
+import { Grid, Paper, Avatar }from '@mui/material';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 function CreateUser({ setLoggedIn, setUserInformation }) {
   const signUpUser = useCallback((e) =>  {
@@ -28,12 +30,21 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
         console.warn({ error, errorCode, errorMessage })
       });
   }, [setLoggedIn, setUserInformation]);
+
+  const paperStyle={padding:20, height:'70vh', width:280, margin:"20px auto"};
+  const avatarStyle={backgroundColor: "#1bbd7e"};
   
   return (
-    <div className="PageWrapper">
-      <h1>Create User</h1>
-      <CreateUserForm signUpUser={signUpUser} />
-    </div>
+    <Grid>
+      <Paper elevation={10} style={paperStyle}>
+        <Grid align="center">
+          <Avatar style={avatarStyle}><PersonAddAltIcon /></Avatar>
+          <h1>Create User</h1>
+        </Grid>
+        <CreateUserForm signUpUser={signUpUser} />
+      </Paper>
+    </Grid>
+    
   );
 }
 

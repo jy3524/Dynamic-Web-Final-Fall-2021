@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { signInWithEmailAndPassword, getAuth } from "@firebase/auth";
 import LoginForm from "../components/LoginForm";
+import { Grid, Paper, Avatar }from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
 
 function Login({ setLoggedIn, setUserInformation }) {
   const loginUser = useCallback((e) =>  {
@@ -29,11 +31,19 @@ function Login({ setLoggedIn, setUserInformation }) {
       });
   }, [setLoggedIn, setUserInformation]);
   
+  const paperStyle={padding:20, height:'70vh', width:280, margin:"20px auto"};
+  const avatarStyle={backgroundColor: "#1bbd7e"};
+
   return (
-    <div className="PageWrapper">
-      <h1>Login</h1>
-      <LoginForm loginUser={loginUser} />
-    </div>
+    <Grid>
+      <Paper elevation={10} style={paperStyle}>
+        <Grid align="center">
+          <Avatar style={avatarStyle}><LockIcon /></Avatar>
+          <h1>Login</h1>
+        </Grid>
+        <LoginForm loginUser={loginUser} />
+      </Paper>
+    </Grid>
   );
 }
 

@@ -63,11 +63,6 @@
 .Form form {
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 0 20px;
   max-width: 500px;
-}
-
-.Form input {
-  margin-bottom: 30px;
-  padding: 5px;
 }
