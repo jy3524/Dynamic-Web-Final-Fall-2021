@@ -4,36 +4,6 @@
   padding: 0 25px;
 }
 
-.posts {
-  align-content: center;
-  border: 3px solid black;
-  border-radius: 10px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  height: 200px;
-  margin: 30px;
-  padding: 30px;
-  text-align: center;
-  width: 600px;
-}
-
-.author {
-  font-weight: bold;
-}
-
-.title {
-  font-weight: bold;
-}
-
-.text {
-  padding: 25px;
-}
-
-.PageWrapper {
-  padding: 0 25px;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
 .Header {
   align-items: center;
   display: flex;

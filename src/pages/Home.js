@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Posts from './Posts.js';
+import { Container, Grid } from '@mui/material';
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -20,17 +21,21 @@ function Home() {
   }, [URL])
 
   return (
-    <div>
-      {posts.map(post => {
-        return (
-          <Posts 
-            author={post.author}
-            title={post.title}
-            text={post.text}
-          />
-        )
-      })}
-    </div>
+    <Container>
+      <Grid container>
+        {posts.map(post => {
+          return (
+            <Grid xs={12} md={6} lg={4}>
+              <Posts 
+                author={post.author}
+                title={post.title}
+                text={post.text}
+              />
+            </Grid>
+          )
+        })}
+      </Grid>
+    </Container>
   )
 }
 
