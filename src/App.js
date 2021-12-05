@@ -62,7 +62,7 @@ function App() {
           <Route path="/home" element={loggedIn ? (<Home />) : (<Navigate to="/" />)}/>
           <Route path="/user/:id" element={loggedIn ? (<UserProfile userInformation={userInformation}/>) : (<Navigate to="/" />)} />
           <Route path="/create" element={!loggedIn ? (<CreateUser setLoggedIn={setLoggedIn} setUserInformation={setUserInformation} />) : (<Navigate to={`/user/${userInformation.uid}`} />)} />
-          <Route path="/" element={!loggedIn ? (<Login setLoggedIn={setLoggedIn} setUserInformation={setUserInformation}/>) : (<Navigate to={`/user/${userInformation.uid}`} />)} />
+          <Route path="/" element={!loggedIn ? (<Login setLoggedIn={setLoggedIn} setUserInformation={setUserInformation}/>) : (<Navigate to={`/home`} />)} />
         </Routes>
       </Router>
     </>
