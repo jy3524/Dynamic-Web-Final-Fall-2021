@@ -14,7 +14,6 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
         const user = userCredential.user;
         setLoggedIn(true)
         setUserInformation({

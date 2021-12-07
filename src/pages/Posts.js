@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, Container, Typography, IconButton } from '@mui/material';
+import { Card, CardHeader, CardContent, Container, Typography, IconButton, Avatar } from '@mui/material';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 
 const Posts = ({ author, title, text }) => {
@@ -8,10 +8,11 @@ const Posts = ({ author, title, text }) => {
   return (
     <Container>
       <Card elevation={5} style={cardStyle}>
+        <Avatar sx={{height:"50px", width:"50px"}} alt="" src="/broken-img.jpg"/>
         <CardHeader 
           action={
             <IconButton><DeleteOutlined/></IconButton>
-          } 
+          }
           title={title} 
           subheader={author} 
         />

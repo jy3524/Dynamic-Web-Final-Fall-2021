@@ -40,7 +40,7 @@ function CreatePost() {
           <div>
             <TextField sx={{ m: 1 }} style={{width: "80%"}} id="outlined-name" label="Name" placeholder="Name" value={author} onChange={(e) => setAuthor(e.target.value)}/>
           </div>
-          <Button sx={{ m: 3 }} style={{width: "80%"}} type="submit" color="primary" variant="contained" onClick={handleSubmit}>Submit Post</Button>
+          <Button sx={{ m: 3 }} style={{width: "15%"}} type="submit" color="primary" variant="contained" onClick={handleSubmit}>Submit Post</Button>
         </form>
       </Paper>
     </Grid>
