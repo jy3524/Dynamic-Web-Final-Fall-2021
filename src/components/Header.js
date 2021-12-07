@@ -26,7 +26,7 @@ function Header({ logout, loggedIn }) {
             {loggedIn && (
               <>
                 <Button href="/home" color="inherit">Dashboard</Button>
-                <Button color="inherit">Create Post</Button>
+                <Button href="/post" color="inherit">Create Post</Button>
                 <div>
                   <IconButton
                     size="large"
