@@ -30,7 +30,7 @@ function CreatePost() {
     <Grid align="center">
       <Paper elevation={10} style={paperStyle}>
         <form onSubmit={handleSubmit}>
-          <h1>Post</h1>
+          <h2>Post</h2>
           <div>
             <TextField sx={{ m: 1 }} style={{width: "80%"}} id="outlined-name" label="Title" placeholder="Type here" value={title} onChange={(e) => setTitle(e.target.value)} />
           </div>

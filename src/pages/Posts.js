@@ -22,7 +22,7 @@ const Posts = ({ author, title, text }) => {
           title={title} 
           subheader={author} 
         />
-        <CardMedia component="img" height="194" image="https://media.timeout.com/images/103939099/750/422/image.jpg" alt="" />
+        <CardMedia component="img" height="194" image="https://media.timeout.com/images/103939099/750/422/image.jpg" alt="placeholderimg" />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             {text}
