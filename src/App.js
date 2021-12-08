@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import firebaseConfig from "./components/FirebaseConfig"
 import Home from './pages/Home';
 import Post from './pages/CreatePost';
+import Chat from './pages/Chat';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -60,10 +61,11 @@ function App() {
       <Header logout={logout} loggedIn={loggedIn} />
       <Router>
         <Routes>
+          <Route path="/chat" element={loggedIn ? (<Chat />) : (<Navigate to="/" />)}/>
           <Route path="/post" element={loggedIn ? (<Post />) : (<Navigate to="/" />)}/>
           <Route path="/home" element={loggedIn ? (<Home />) : (<Navigate to="/" />)}/>
           <Route path="/user/:id" element={loggedIn ? (<UserProfile userInformation={userInformation}/>) : (<Navigate to="/" />)} />
-          <Route path="/create" element={!loggedIn ? (<CreateUser setLoggedIn={setLoggedIn} setUserInformation={setUserInformation} />) : (<Navigate to={`/user/${userInformation.uid}`} />)} />
+          <Route path="/create" element={!loggedIn ? (<CreateUser setLoggedIn={setLoggedIn} setUserInformation={setUserInformation} />) : (<Navigate to={`/home`} />)} />
           <Route path="/" element={!loggedIn ? (<Login setLoggedIn={setLoggedIn} setUserInformation={setUserInformation}/>) : (<Navigate to={`/home`} />)} />
         </Routes>
       </Router>

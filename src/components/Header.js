@@ -12,7 +12,7 @@ function Header({ logout, loggedIn }) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1}}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <header className="Header">
           <Typography className="Logo">Final Project</Typography>
@@ -26,7 +26,8 @@ function Header({ logout, loggedIn }) {
             {loggedIn && (
               <>
                 <Button href="/home" color="inherit">Dashboard</Button>
-                <Button href="/post" color="inherit">Create Post</Button>
+                <Button href="/post" color="inherit">Post</Button>
+                <Button href="/chat" color="inherit">Chat</Button>
                 <div>
                   <IconButton
                     size="large"

@@ -1,26 +1,41 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, Container, Typography, IconButton, Avatar } from '@mui/material';
+import { Card, CardHeader, CardContent, Container, Typography, IconButton, Avatar, CardMedia, CardActions } from '@mui/material';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
+import ShareIcon from '@mui/icons-material/Share';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { red } from '@mui/material/colors';
 
 const Posts = ({ author, title, text }) => {
-  const cardStyle={padding:20, margin:"30px auto"};
+  const cardStyle={margin:"30px auto"};
 
   return (
     <Container>
-      <Card elevation={5} style={cardStyle}>
-        <Avatar sx={{height:"50px", width:"50px"}} alt="" src="/broken-img.jpg"/>
-        <CardHeader 
+      <Card elevation={5} style={cardStyle} sx={{maxWidth: 345}}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{height:"50px", width:"50px", bgcolor:red[500]}} 
+            alt="" src="/broken-img.jpg"/>
+          } 
           action={
             <IconButton><DeleteOutlined/></IconButton>
           }
           title={title} 
           subheader={author} 
         />
+        <CardMedia component="img" height="194" image="https://media.timeout.com/images/103939099/750/422/image.jpg" alt="" />
         <CardContent>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="text.secondary">
             {text}
           </Typography>
         </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="likes">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        </CardActions>
       </Card>
     </Container>
   )
