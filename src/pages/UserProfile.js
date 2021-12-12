@@ -3,7 +3,7 @@ import { Avatar, Grid, Paper } from "@mui/material";
 import { red } from '@mui/material/colors';
 
 function UserProfile( { userInformation }) {
-  const paperStyle={padding:20, height:'50vh', width:300, margin:"30px auto"};
+  const paperStyle={padding:20, height:400, width:300, margin:"30px auto"};
 
   return (
     <Grid>

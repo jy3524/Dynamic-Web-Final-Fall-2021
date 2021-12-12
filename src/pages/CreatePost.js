@@ -25,7 +25,7 @@ function CreatePost() {
     setAuthor("")
   }
 
-  const paperStyle={padding:20, height:'60vh', width: '70%', margin:"30px auto"};
+  const paperStyle={padding:20, height:500, width: '70%', margin:"30px auto"};
 
   return (
     <Grid align="center">
