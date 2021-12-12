@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { initializeApp } from '@firebase/app';
-import { getFirestore, addDoc, collection, serverTimestamp, query, orderBy, onSnapshot } from '@firebase/firestore';
+import { getFirestore, addDoc, collection, query, orderBy, onSnapshot, Timestamp } from '@firebase/firestore';
 import firebaseConfig from '../components/FirebaseConfig';
 import { Avatar, Button, Grid, List, Paper, TextField }from '@mui/material';
 import { red } from '@mui/material/colors';
 import SendIcon from '@mui/icons-material/Send';
 import { Box } from '@mui/system';
+import Moment from 'react-moment';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -18,7 +19,7 @@ function Chat() {
     e.preventDefault(); 
     await addDoc(collection(db, "chat"), {
       text,
-      createdAt: serverTimestamp(),
+      createdAt: Timestamp.fromDate(new Date()),
     });
     setText("")
     window.location.reload();
@@ -30,13 +31,6 @@ function Chat() {
       setChat(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     );
     return getChat
-
-    /*const getChat = async () => {
-      const data = await getDocs(collection(db, "chat"));
-      setChat(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getChat();*/
-
   }, []);
 
   return (
@@ -50,6 +44,7 @@ function Chat() {
                 <Avatar sx={{height:"30px", width:"30px", bgcolor:red[500]}} 
                 alt="" src="/broken-img.jpg" />
                 <p>{chat.text}</p>
+                <Moment fromNow>{chat.createdAt.toDate()}</Moment>
               </Paper>
             )
           })}
