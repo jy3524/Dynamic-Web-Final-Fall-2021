@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { initializeApp } from '@firebase/app';
-import { getFirestore, collection, addDoc } from '@firebase/firestore';
+import { getFirestore, collection, addDoc, Timestamp } from '@firebase/firestore';
 import firebaseConfig from '../components/FirebaseConfig';
-import { Grid, Paper, Button, TextField }from '@mui/material';
+import { Grid, Paper, Button, TextField } from '@mui/material';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -18,6 +18,7 @@ function CreatePost() {
       author,
       text,
       title,
+      createdAt: Timestamp.fromDate(new Date()),
     });
     setTitle("")
     setText("")

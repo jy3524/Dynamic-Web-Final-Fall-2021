@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardHeader, CardContent, Container, Typography, IconButton, Avatar, CardMedia, CardActions } from '@mui/material';
-import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { red } from '@mui/material/colors';
 
 const Posts = ({ author, title, text }) => {
@@ -15,9 +15,11 @@ const Posts = ({ author, title, text }) => {
           avatar={
             <Avatar sx={{height:"50px", width:"50px", bgcolor:red[500]}} 
             alt="" src="/broken-img.jpg"/>
-          } 
+          }
           action={
-            <IconButton><DeleteOutlined/></IconButton>
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
           }
           title={title} 
           subheader={author} 

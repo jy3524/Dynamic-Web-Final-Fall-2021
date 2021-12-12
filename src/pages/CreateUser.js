@@ -30,7 +30,7 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
       });
   }, [setLoggedIn, setUserInformation]);
 
-  const paperStyle={padding:20, height:'60vh', width:300, margin:"30px auto"};
+  const paperStyle={padding:20, height:400, width:300, margin:"30px auto"};
   const avatarStyle={backgroundColor: "#1bbd7e"};
   
   return (

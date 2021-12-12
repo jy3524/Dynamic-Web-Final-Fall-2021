@@ -22,7 +22,6 @@ function Chat() {
       createdAt: Timestamp.fromDate(new Date()),
     });
     setText("")
-    window.location.reload();
   }
 
   useEffect(() => {
