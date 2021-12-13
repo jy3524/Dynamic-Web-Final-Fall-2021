@@ -8,7 +8,7 @@ function CreateUserForm({ signUpUser }) {
         <TextField sx={{ m: 1 }} type="email" name="email" placeholder="Enter Email" variant="standard" />
         <TextField sx={{ m: 1 }} type="name" name="name" placeholder="Enter Name" variant="standard" />
         <TextField sx={{ m: 1 }} type="password" name="password" placeholder="Enter Password" variant="standard" />
-        <Button sx={{ m: 2 }} type="submit" color="primary" variant="contained">Create User</Button>
+        <Button sx={{ m: 2 }} type="submit" color="primary" variant="contained">Sign up</Button>
       </form>
     </div>
   );

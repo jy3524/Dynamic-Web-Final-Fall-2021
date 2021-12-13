@@ -38,7 +38,7 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}><PersonAddAltIcon /></Avatar>
-          <h1>Create User</h1>
+          <h1>Sign-up</h1>
         </Grid>
         <CreateUserForm signUpUser={signUpUser} />
       </Paper>
