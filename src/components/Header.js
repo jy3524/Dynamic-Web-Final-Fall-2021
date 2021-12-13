@@ -20,7 +20,7 @@ function Header({ logout, loggedIn }) {
             {!loggedIn && (
               <>
                 <Button href="/" color="inherit">Login</Button>
-                <Button href="/create" color="inherit">Create User</Button>
+                <Button href="/create" color="inherit">Sign-up</Button>
               </>
             )}
             {loggedIn && (
